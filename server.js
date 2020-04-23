@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 	pool.connect((err, client, done) => {
 		if (err) throw err;
 		client.query(`SELECT * FROM USERS`, (err, result) => {
-			if (err) throw;
+			if (err) throw (err);
 			done();
 			res.json(result.rows);
 		})
